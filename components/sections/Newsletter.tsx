@@ -23,9 +23,11 @@ export default function Newsletter() {
 
   return (
     <section className="py-16">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="rounded-2xl border p-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="rounded-2xl border p-8 bg-card/60 backdrop-blur shadow-sm relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 opacity-60 bg-[radial-gradient(700px_340px_at_20%_0%,hsl(265_90%_60%/.12),transparent_65%),radial-gradient(700px_340px_at_90%_50%,hsl(190_95%_55%/.10),transparent_65%)]" />
+
+          <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-xl">
               <h2 className="text-2xl font-semibold tracking-tight">
                 Newsletter
@@ -42,13 +44,16 @@ export default function Newsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="bg-background/40 backdrop-blur"
               />
-              <Button type="submit">Suscribirme</Button>
+              <Button type="submit" className="shadow-sm">
+                Suscribirme
+              </Button>
             </form>
           </div>
 
           {status === "ok" && (
-            <p className="mt-4 text-sm text-muted-foreground">
+            <p className="relative mt-4 text-sm text-muted-foreground">
               Listo. Te registramos (mock). Luego conectamos el envío real.
             </p>
           )}

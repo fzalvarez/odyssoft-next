@@ -1,4 +1,6 @@
 import EnterpriseHero from "@/components/sections/EnterpriseHero";
+import WorkflowTimeline from "@/components/sections/WorkflowTimeline";
+
 import TrustedLogos from "@/components/sections/TrustedLogos";
 import FeatureTwoCol from "@/components/sections/FeatureTwoCol";
 import BentoGrid from "@/components/sections/BentoGrid";
@@ -9,8 +11,9 @@ import Newsletter from "@/components/sections/Newsletter";
 
 export default function Home() {
   return (
-    <>
+    <div className="odys-surface">
       <EnterpriseHero />
+      <WorkflowTimeline />
       <TrustedLogos />
 
       <FeatureTwoCol
@@ -39,6 +42,6 @@ export default function Home() {
       <ServicesGrid />
       <ComparisonCTA />
       <Newsletter />
-    </>
+    </div>
   );
 }

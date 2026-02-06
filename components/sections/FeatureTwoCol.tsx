@@ -14,7 +14,7 @@ export default function FeatureTwoCol({
   const content = (
     <div>
       <div className="flex items-center gap-3">
-        <div className="h-1 w-10 rounded bg-muted" />
+        <div className="h-1 w-10 rounded bg-primary/60" />
         <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
           {eyebrow}
         </p>
@@ -26,8 +26,8 @@ export default function FeatureTwoCol({
   );
 
   const image = (
-    <div className="rounded-xl border bg-muted/20 p-6">
-      <div className="aspect-[4/3] rounded-lg bg-muted flex items-center justify-center text-xs text-muted-foreground">
+    <div className="rounded-2xl border bg-card/60 backdrop-blur p-6 shadow-sm">
+      <div className="aspect-[4/3] rounded-xl bg-muted/30 border border-border/60 flex items-center justify-center text-xs text-muted-foreground">
         Image placeholder
       </div>
     </div>
