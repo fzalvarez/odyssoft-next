@@ -7,7 +7,7 @@ import BentoGrid from "@/components/sections/BentoGrid";
 import GradientCTA from "@/components/sections/GradientCTA";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ComparisonCTA from "@/components/sections/ComparisonCTA";
-import Newsletter from "@/components/sections/Newsletter";
+/* import Newsletter from "@/components/sections/Newsletter"; */
 import { ThemeDebug } from "@/components/debug/ThemeDebug";
 
 export default function Home() {
@@ -43,7 +43,7 @@ export default function Home() {
       <GradientCTA />
       <ServicesGrid />
       <ComparisonCTA />
-      <Newsletter />
+      {/* <Newsletter /> */}
     </div>
   );
 }

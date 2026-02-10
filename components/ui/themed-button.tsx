@@ -8,7 +8,7 @@ const themedButtonVariants = cva("", {
   variants: {
     tone: {
       primary:
-        "bg-[rgb(var(--primary))] text-[rgb(var(--primary))]-foreground shadow-sm hover:bg-[rgb(var(--primary))]/85",
+        "bg-[rgb(var(--primary))] text-[rgb(var(--primary-foreground))] shadow-sm hover:bg-[rgb(var(--primary))]/85",
       outline:
         "border border-border/70 bg-transparent text-[rgb(var(--foreground))] hover:bg-[rgb(var(--muted))]/30",
       soft:

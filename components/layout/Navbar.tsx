@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="flex gap-6 text-sm">
           <Link href="/services" className="hover:text-[rgb(var(--foreground))]/80 transition-colors">Services</Link>
           <Link href="/enterprise" className="hover:text-[rgb(var(--foreground))]/80 transition-colors">Enterprise</Link>
-          <Link href="/blog" className="hover:text-[rgb(var(--foreground))]/80 transition-colors">Blog</Link>
+          {/* <Link href="/blog" className="hover:text-[rgb(var(--foreground))]/80 transition-colors">Blog</Link> */}
           <Link href="/contact" className="font-medium hover:text-[rgb(var(--foreground))]/80 transition-colors">Contact</Link>
         </div>
       </nav>

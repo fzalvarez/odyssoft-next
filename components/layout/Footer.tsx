@@ -70,14 +70,14 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/blog"
                   className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
