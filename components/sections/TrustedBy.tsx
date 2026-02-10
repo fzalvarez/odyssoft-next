@@ -12,7 +12,7 @@ export default function TrustedBy() {
           {logos.map((name) => (
             <div
               key={name}
-              className="h-10 rounded-md bg-muted/40 flex items-center justify-center text-xs font-medium text-muted-foreground"
+              className="h-10 rounded-md bg-[rgb(var(--muted))]/40 flex items-center justify-center text-xs font-medium text-muted-foreground"
             >
               {name}
             </div>

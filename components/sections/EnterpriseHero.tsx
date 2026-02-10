@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { ThemedButton } from "@/components/ui/themed-button";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function EnterpriseHero() {
@@ -21,12 +22,12 @@ export default function EnterpriseHero() {
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button asChild className="shadow-sm">
+            <ThemedButton asChild>
               <Link href="/contact">Schedule a call</Link>
-            </Button>
-            <Button variant="outline" asChild className="bg-background/40 backdrop-blur">
+            </ThemedButton>
+            <ThemedButton tone="outline" asChild>
               <Link href="/services">Everything we do</Link>
-            </Button>
+            </ThemedButton>
           </div>
 
           <div className="mt-8 grid grid-cols-3 gap-4 text-sm">
@@ -45,13 +46,15 @@ export default function EnterpriseHero() {
           </div>
         </div>
 
-        <div className="rounded-2xl border bg-card/60 backdrop-blur p-6 shadow-sm">
-          <div className="aspect-video rounded-xl bg-muted/30 border border-border/60 flex items-center justify-center text-xs text-muted-foreground">
-            Hero illustration / product image (placeholder)
-          </div>
-          <p className="mt-3 text-xs text-muted-foreground">
-            Tip: luego aquí pones un gráfico de arquitectura, dashboards, o UI real.
-          </p>
+        <div className="relative aspect-8/5 overflow-hidden rounded-2xl bg-card/60 shadow-sm">
+          <Image
+            src="/assets/developers.png"
+            alt="Equipo de desarrollo colaborando en oficina"
+            fill
+            sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
+            className="object-cover object-center"
+            priority
+          />
         </div>
       </div>
     </section>

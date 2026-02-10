@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { ThemedButton } from "@/components/ui/themed-button";
 
 export default function ComparisonCTA() {
   return (
@@ -16,16 +16,12 @@ export default function ComparisonCTA() {
               delivery plan, and risks.
             </p>
             <div className="mt-6 flex justify-center gap-3">
-              <Button asChild className="shadow-sm">
+              <ThemedButton asChild>
                 <Link href="/contact">Request a discovery call</Link>
-              </Button>
-              <Button
-                variant="outline"
-                asChild
-                className="bg-background/40 backdrop-blur"
-              >
+              </ThemedButton>
+              <ThemedButton tone="outline" asChild>
                 <Link href="/about">How we work</Link>
-              </Button>
+              </ThemedButton>
             </div>
           </div>
         </div>

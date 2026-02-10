@@ -1,11 +1,21 @@
 import {
-  Compass,
-  Code2,
-  BadgeCheck,
+  TextSearch,
+  Code,
+  ClipboardCheck,
   Rocket,
-  ShieldCheck,
-  Mouse,
+  CalendarCog,
 } from "lucide-react";
+import {
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDescription,
+  TimelineDot,
+  TimelineHeader,
+  TimelineItem,
+  TimelineTime,
+  TimelineTitle,
+} from "@/components/ui/timeline";
 
 type Step = {
   index: string;
@@ -23,7 +33,7 @@ const STEPS: Step[] = [
     title: "Scope",
     description:
       "Aterrizamos objetivos, restricciones y alcance. Definimos un roadmap claro y un plan técnico realista.",
-    icon: <Compass className="h-7 w-7 md:h-8 md:w-8" />,
+    icon: <TextSearch className="h-6 w-6 md:h-7 md:w-7" />,
     accent: "blue",
   },
   {
@@ -32,7 +42,7 @@ const STEPS: Step[] = [
     title: "Development",
     description:
       "Construcción con prácticas modernas: PRs pequeñas, estándares, pruebas y entregas continuas.",
-    icon: <Code2 className="h-7 w-7 md:h-8 md:w-8" />,
+    icon: <Code className="h-6 w-6 md:h-7 md:w-7" />,
     accent: "purple",
   },
   {
@@ -41,7 +51,7 @@ const STEPS: Step[] = [
     title: "Stabilization",
     description:
       "QA, hardening y performance. Cerramos brechas antes de producción para evitar sorpresas.",
-    icon: <BadgeCheck className="h-7 w-7 md:h-8 md:w-8" />,
+    icon: <ClipboardCheck className="h-6 w-6 md:h-7 md:w-7" />,
     accent: "indigo",
   },
   {
@@ -50,7 +60,7 @@ const STEPS: Step[] = [
     title: "Delivery",
     description:
       "Release limpio y medible. Acompañamos el despliegue y dejamos handover ordenado.",
-    icon: <Rocket className="h-7 w-7 md:h-8 md:w-8" />,
+    icon: <Rocket className="h-6 w-6 md:h-7 md:w-7" />,
     accent: "pink",
   },
   {
@@ -59,50 +69,17 @@ const STEPS: Step[] = [
     title: "Support",
     description:
       "Monitoreo, mejoras iterativas y mantenimiento. Evolución sostenible con foco en valor.",
-    icon: <ShieldCheck className="h-7 w-7 md:h-8 md:w-8" />,
+    icon: <CalendarCog className="h-6 w-6 md:h-7 md:w-7" />,
     accent: "emerald",
   },
 ];
-
-function accentClasses(accent: Step["accent"]) {
-  switch (accent) {
-    case "blue":
-      return {
-        kicker: "text-blue-500/80",
-        icon: "text-blue-500",
-        border: "from-blue-500 via-blue-500 to-purple-500",
-        glow: "shadow-[0_0_16px_rgba(59,130,246,0.35)]",
-      };
-    case "purple":
-      return {
-        kicker: "text-purple-500/80",
-        icon: "text-purple-500",
-        border: "from-purple-500 via-fuchsia-500 to-pink-500",
-        glow: "shadow-[0_0_16px_rgba(168,85,247,0.32)]",
-      };
-    case "indigo":
-      return {
-        kicker: "text-indigo-500/80",
-        icon: "text-indigo-500",
-        border: "from-indigo-500 via-blue-500 to-cyan-500",
-        glow: "shadow-[0_0_16px_rgba(99,102,241,0.30)]",
-      };
-    case "pink":
-      return {
-        kicker: "text-pink-500/80",
-        icon: "text-pink-500",
-        border: "from-pink-500 via-rose-500 to-orange-500",
-        glow: "shadow-[0_0_16px_rgba(236,72,153,0.30)]",
-      };
-    case "emerald":
-      return {
-        kicker: "text-emerald-500/80",
-        icon: "text-emerald-500",
-        border: "from-emerald-500 via-teal-500 to-cyan-500",
-        glow: "shadow-[0_0_16px_rgba(16,185,129,0.30)]",
-      };
-  }
-}
+const accentIconClass: Record<Step["accent"], string> = {
+  blue: "text-blue-400",
+  purple: "text-purple-400",
+  indigo: "text-indigo-400",
+  pink: "text-pink-400",
+  emerald: "text-emerald-400",
+};
 
 export default function WorkflowTimeline() {
   return (
@@ -124,20 +101,64 @@ export default function WorkflowTimeline() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-5">
-          {[
-            { n: "01", t: "DISCOVERY", s: "Scope", d: "Objetivos, restricciones y roadmap realista." },
-            { n: "02", t: "ENGINEERING", s: "Development", d: "PRs pequeñas, estándares, CI, entregas." },
-            { n: "03", t: "ASSURANCE", s: "Stabilization", d: "QA, hardening y performance." },
-            { n: "04", t: "LAUNCH", s: "Delivery", d: "Release limpio, despliegue y handover." },
-            { n: "05", t: "GROWTH", s: "Support", d: "Monitoreo, mejoras iterativas, mantenimiento." },
-          ].map((x) => (
-            <div key={x.n} className="rounded-2xl border bg-card/40 p-5">
-              <div className="text-xs text-muted-foreground">{x.n}. {x.t}</div>
-              <div className="mt-2 text-lg font-semibold">{x.s}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{x.d}</p>
-            </div>
-          ))}
+        <div className="mt-12">
+          <Timeline
+            orientation="horizontal"
+            activeIndex={2}
+            className="hidden md:flex [--timeline-dot-size:2.4rem] [--timeline-connector-thickness:0.18rem]"
+          >
+            {STEPS.map((step) => (
+              <TimelineItem key={step.index}>
+                <TimelineDot
+                  className={
+                    "bg-[rgb(var(--background))] border-border " +
+                    accentIconClass[step.accent]
+                  }
+                >
+                  {step.icon}
+                </TimelineDot>
+                <TimelineConnector className="bg-neutral-100 data-[completed]:bg-neutral-300" />
+                <TimelineContent>
+                  <TimelineHeader>
+                    <TimelineTime dateTime={`step-${step.index}`}>
+                      {step.index}. {step.kicker.toUpperCase()}
+                    </TimelineTime>
+                    <TimelineTitle>{step.title}</TimelineTitle>
+                  </TimelineHeader>
+                  <TimelineDescription>{step.description}</TimelineDescription>
+                </TimelineContent>
+              </TimelineItem>
+            ))}
+          </Timeline>
+
+          <Timeline
+            orientation="vertical"
+            activeIndex={2}
+            className="md:hidden [--timeline-dot-size:2.1rem] [--timeline-connector-thickness:0.18rem]"
+          >
+            {STEPS.map((step) => (
+              <TimelineItem key={step.index}>
+                <TimelineDot
+                  className={
+                    "bg-[rgb(var(--background))] border-border " +
+                    accentIconClass[step.accent]
+                  }
+                >
+                  {step.icon}
+                </TimelineDot>
+                <TimelineConnector className="bg-amber-300 data-[completed]:bg-amber-300" />
+                <TimelineContent>
+                  <TimelineHeader>
+                    <TimelineTime dateTime={`step-${step.index}`}>
+                      {step.index}. {step.kicker.toUpperCase()}
+                    </TimelineTime>
+                    <TimelineTitle>{step.title}</TimelineTitle>
+                  </TimelineHeader>
+                  <TimelineDescription>{step.description}</TimelineDescription>
+                </TimelineContent>
+              </TimelineItem>
+            ))}
+          </Timeline>
         </div>
 
         <p className="mt-10 text-center text-xs text-muted-foreground">

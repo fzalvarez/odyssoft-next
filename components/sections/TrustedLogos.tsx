@@ -3,7 +3,7 @@ import { clients } from "@/lib/clients";
 
 export default function TrustedLogos() {
   return (
-    <section className="py-14 border-y bg-muted/10">
+    <section className="py-14 border-y bg-[rgb(var(--muted))]/10">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <p className="text-sm font-medium text-muted-foreground">

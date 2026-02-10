@@ -168,14 +168,18 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-[rgb(var(--background))] text-[rgb(var(--foreground))] antialiased;
   }
 }
 
 @layer utilities {
   /* Soft noise-like radial washes for dark sections (no inline styles needed) */
   .odys-surface {
-    @apply bg-background;
+    @apply bg-[rgb(var(--background))];
+  }
+
+  .odys-title {
+    @apply text-3xl lg:text-4xl font-semibold tracking-tight;
   }
 
   .odys-hero {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { ThemedButton } from "@/components/ui/themed-button";
 
 export default function GradientCTA() {
   return (
@@ -17,16 +17,12 @@ export default function GradientCTA() {
                 processes, and hands-on onboarding.
               </p>
               <div className="mt-6 flex justify-center gap-3">
-                <Button asChild className="shadow-sm">
+                <ThemedButton asChild>
                   <Link href="/contact">Book a call</Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  asChild
-                  className="bg-background/40 backdrop-blur"
-                >
+                </ThemedButton>
+                <ThemedButton tone="outline" asChild>
                   <Link href="/services">See services</Link>
-                </Button>
+                </ThemedButton>
               </div>
             </div>
           </div>

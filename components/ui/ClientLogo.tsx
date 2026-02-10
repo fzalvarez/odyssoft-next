@@ -116,7 +116,7 @@ export function ClientLogo({
   return (
     <div 
       className={cn(
-        "flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity text-foreground w-full h-full",
+        "flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity text-[rgb(var(--foreground))] w-full h-full",
         className
       )}
     >

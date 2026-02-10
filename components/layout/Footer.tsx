@@ -3,7 +3,7 @@ import { Logo } from "@/components/ui/Logo";
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-muted/30">
+    <footer className="border-t bg-[rgb(var(--muted))]/30">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
@@ -19,7 +19,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   Custom Development
                 </Link>
@@ -27,7 +27,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   QA & Testing
                 </Link>
@@ -35,7 +35,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   AI & Data
                 </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   Cloud & DevOps
                 </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   About
                 </Link>
@@ -65,7 +65,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   Contact
                 </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   Blog
                 </Link>
@@ -87,7 +87,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   Privacy
                 </Link>
@@ -95,7 +95,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-[rgb(var(--foreground))] transition-colors"
                 >
                   Terms
                 </Link>

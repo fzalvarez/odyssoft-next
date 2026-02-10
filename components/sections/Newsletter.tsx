@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { ThemedButton } from "@/components/ui/themed-button";
 import { Input } from "@/components/ui/input";
 
 export default function Newsletter() {
@@ -44,11 +44,9 @@ export default function Newsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="bg-background/40 backdrop-blur"
+                className="bg-[rgb(var(--background))]/40 backdrop-blur"
               />
-              <Button type="submit" className="shadow-sm">
-                Suscribirme
-              </Button>
+              <ThemedButton type="submit">Suscribirme</ThemedButton>
             </form>
           </div>
 
