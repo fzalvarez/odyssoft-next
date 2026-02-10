@@ -1,6 +1,7 @@
-export default function TrustedLogos() {
-  const logos = ["Oracle", "HP", "Universal", "AMC Networks", "Privalia", "Navy"];
+import { ClientLogo } from "@/components/ui/ClientLogo";
+import { clients } from "@/lib/clients";
 
+export default function TrustedLogos() {
   return (
     <section className="py-14 border-y bg-muted/10">
       <div className="mx-auto max-w-6xl px-6">
@@ -13,13 +14,27 @@ export default function TrustedLogos() {
           </p>
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
-          {logos.map((name) => (
+        <div className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {clients.map((client) => (
             <div
-              key={name}
-              className="h-10 rounded-lg border bg-card/60 backdrop-blur flex items-center justify-center text-xs font-medium text-muted-foreground shadow-sm"
+              key={client.slug}
+              className="rounded-lg border bg-card/60 backdrop-blur p-6 flex items-center justify-center shadow-sm hover:bg-card/80 transition-colors h-24"
             >
-              {name}
+              <ClientLogo
+                client={client.slug}
+                name={client.name}
+                hasThemeVariants={client.hasThemeVariants}
+              />
+            </div>
+          ))}
+
+          {/* Placeholders para futuros clientes */}
+          {Array.from({ length: Math.max(0, 6 - clients.length) }).map((_, i) => (
+            <div
+              key={`placeholder-${i}`}
+              className="rounded-lg border bg-card/60 backdrop-blur p-6 flex items-center justify-center shadow-sm h-24"
+            >
+              <span className="text-xs text-muted-foreground">Client Logo</span>
             </div>
           ))}
         </div>

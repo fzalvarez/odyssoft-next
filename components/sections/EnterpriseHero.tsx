@@ -46,7 +46,7 @@ export default function EnterpriseHero() {
         </div>
 
         <div className="rounded-2xl border bg-card/60 backdrop-blur p-6 shadow-sm">
-          <div className="aspect-[16/9] rounded-xl bg-muted/30 border border-border/60 flex items-center justify-center text-xs text-muted-foreground">
+          <div className="aspect-video rounded-xl bg-muted/30 border border-border/60 flex items-center justify-center text-xs text-muted-foreground">
             Hero illustration / product image (placeholder)
           </div>
           <p className="mt-3 text-xs text-muted-foreground">

@@ -8,10 +8,12 @@ import GradientCTA from "@/components/sections/GradientCTA";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ComparisonCTA from "@/components/sections/ComparisonCTA";
 import Newsletter from "@/components/sections/Newsletter";
+import { ThemeDebug } from "@/components/debug/ThemeDebug";
 
 export default function Home() {
   return (
     <div className="odys-surface">
+      {/* <ThemeDebug /> */}
       <EnterpriseHero />
       <WorkflowTimeline />
       <TrustedLogos />
