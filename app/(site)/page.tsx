@@ -2,6 +2,7 @@ import EnterpriseHero from "@/components/sections/EnterpriseHero";
 import WorkflowTimeline from "@/components/sections/WorkflowTimeline";
 
 import TrustedLogos from "@/components/sections/TrustedLogos";
+import ProcessSteps from "@/components/sections/ProcessSteps";
 import FeatureTwoCol from "@/components/sections/FeatureTwoCol";
 import BentoGrid from "@/components/sections/BentoGrid";
 import GradientCTA from "@/components/sections/GradientCTA";
@@ -24,6 +25,8 @@ export default function Home() {
 
       <WorkflowTimeline />
       <TrustedLogos />
+
+      <ProcessSteps />
 
       <FeatureTwoCol
         eyebrow="Expertise at your fingertips"
