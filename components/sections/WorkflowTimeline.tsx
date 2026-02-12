@@ -33,7 +33,7 @@ const STEPS: Step[] = [
     title: "Scope",
     description:
       "Aterrizamos objetivos, restricciones y alcance. Definimos un roadmap claro y un plan técnico realista.",
-    icon: <TextSearch className="h-6 w-6 md:h-7 md:w-7" />,
+    icon: <TextSearch className="h-6 w-6 md:h-7 md:w-7 xl:w-5 xl:h-5" />,
     accent: "blue",
   },
   {
@@ -42,7 +42,7 @@ const STEPS: Step[] = [
     title: "Development",
     description:
       "Construcción con prácticas modernas: PRs pequeñas, estándares, pruebas y entregas continuas.",
-    icon: <Code className="h-6 w-6 md:h-7 md:w-7" />,
+    icon: <Code className="h-6 w-6 md:h-7 md:w-7 xl:w-5 xl:h-5" />,
     accent: "purple",
   },
   {
@@ -51,7 +51,7 @@ const STEPS: Step[] = [
     title: "Stabilization",
     description:
       "QA, hardening y performance. Cerramos brechas antes de producción para evitar sorpresas.",
-    icon: <ClipboardCheck className="h-6 w-6 md:h-7 md:w-7" />,
+    icon: <ClipboardCheck className="h-6 w-6 md:h-7 md:w-7 xl:w-5 xl:h-5" />,
     accent: "indigo",
   },
   {
@@ -60,7 +60,7 @@ const STEPS: Step[] = [
     title: "Delivery",
     description:
       "Release limpio y medible. Acompañamos el despliegue y dejamos handover ordenado.",
-    icon: <Rocket className="h-6 w-6 md:h-7 md:w-7" />,
+    icon: <Rocket className="h-6 w-6 md:h-7 md:w-7 xl:w-5 xl:h-5" />,
     accent: "pink",
   },
   {
@@ -69,7 +69,7 @@ const STEPS: Step[] = [
     title: "Support",
     description:
       "Monitoreo, mejoras iterativas y mantenimiento. Evolución sostenible con foco en valor.",
-    icon: <CalendarCog className="h-6 w-6 md:h-7 md:w-7" />,
+    icon: <CalendarCog className="h-6 w-6 md:h-7 md:w-7 xl:w-5 xl:h-5" />,
     accent: "emerald",
   },
 ];
@@ -85,19 +85,25 @@ export default function WorkflowTimeline() {
   return (
     <section className="relative py-20">
       {/* Decoración (si la quieres) */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 opacity-40">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 opacity-40"
+      >
         {/* aquí tus decoraciones */}
       </div>
 
       {/* CONTENIDO REAL */}
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
+      <div className="relative z-10 mx-auto w-full max-w-6xl 2xl:max-w-7xl px-6">
         <div className="text-center">
           <p className="inline-flex rounded-full border px-3 py-1 text-xs tracking-wide">
             OUR WORKFLOW
           </p>
-          <h2 className="mt-5 text-4xl font-semibold">Engineered for Excellence</h2>
+          <h2 className="mt-5 text-4xl font-semibold">
+            Engineered for Excellence
+          </h2>
           <p className="mt-3 text-muted-foreground">
-            Un flujo conectado y medible: visión estratégica + ejecución técnica.
+            Un flujo conectado y medible: visión estratégica + ejecución
+            técnica.
           </p>
         </div>
 
@@ -117,48 +123,56 @@ export default function WorkflowTimeline() {
                 >
                   {step.icon}
                 </TimelineDot>
-                <TimelineConnector className="bg-neutral-100 data-[completed]:bg-neutral-300" />
+                <TimelineConnector className="bg-neutral-800 data-completed:bg-neutral-800" />
                 <TimelineContent>
                   <TimelineHeader>
                     <TimelineTime dateTime={`step-${step.index}`}>
                       {step.index}. {step.kicker.toUpperCase()}
                     </TimelineTime>
-                    <TimelineTitle>{step.title}</TimelineTitle>
+                    <TimelineTitle className="text-2xl mb-3">
+                      {step.title}
+                    </TimelineTitle>
                   </TimelineHeader>
-                  <TimelineDescription>{step.description}</TimelineDescription>
+                  <TimelineDescription className="text-neutral-500">
+                    {step.description}
+                  </TimelineDescription>
                 </TimelineContent>
               </TimelineItem>
             ))}
           </Timeline>
 
-          <Timeline
-            orientation="vertical"
-            activeIndex={2}
-            className="md:hidden [--timeline-dot-size:2.1rem] [--timeline-connector-thickness:0.18rem]"
-          >
-            {STEPS.map((step) => (
-              <TimelineItem key={step.index}>
-                <TimelineDot
-                  className={
-                    "bg-[rgb(var(--background))] border-border " +
-                    accentIconClass[step.accent]
-                  }
-                >
-                  {step.icon}
-                </TimelineDot>
-                <TimelineConnector className="bg-amber-300 data-[completed]:bg-amber-300" />
-                <TimelineContent>
-                  <TimelineHeader>
-                    <TimelineTime dateTime={`step-${step.index}`}>
-                      {step.index}. {step.kicker.toUpperCase()}
-                    </TimelineTime>
-                    <TimelineTitle>{step.title}</TimelineTitle>
-                  </TimelineHeader>
-                  <TimelineDescription>{step.description}</TimelineDescription>
-                </TimelineContent>
-              </TimelineItem>
-            ))}
-          </Timeline>
+          <div className="md:hidden">
+            <Timeline
+              orientation="vertical"
+              activeIndex={2}
+              className="[--timeline-dot-size:2.1rem] [--timeline-connector-thickness:0.18rem]"
+            >
+              {STEPS.map((step) => (
+                <TimelineItem key={step.index}>
+                  <TimelineDot
+                    className={
+                      "bg-[rgb(var(--background))] border-border " +
+                      accentIconClass[step.accent]
+                    }
+                  >
+                    {step.icon}
+                  </TimelineDot>
+                  <TimelineConnector className="bg-amber-300 data-completed:bg-amber-300" />
+                  <TimelineContent>
+                    <TimelineHeader>
+                      <TimelineTime dateTime={`step-${step.index}`}>
+                        {step.index}. {step.kicker.toUpperCase()}
+                      </TimelineTime>
+                      <TimelineTitle>{step.title}</TimelineTitle>
+                    </TimelineHeader>
+                    <TimelineDescription>
+                      {step.description}
+                    </TimelineDescription>
+                  </TimelineContent>
+                </TimelineItem>
+              ))}
+            </Timeline>
+          </div>
         </div>
 
         <p className="mt-10 text-center text-xs text-muted-foreground">

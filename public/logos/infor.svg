@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#FF6F61" />
+  <circle cx="50" cy="50" r="36" fill="#fff" />
+  <text x="50" y="56" font-size="16" text-anchor="middle" fill="#FF6F61" font-family="Arial, Helvetica, sans-serif">INFOR</text>
+</svg>

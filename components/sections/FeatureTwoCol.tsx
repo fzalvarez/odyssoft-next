@@ -35,7 +35,7 @@ export default function FeatureTwoCol({
 
   return (
     <section className="py-16">
-      <div className="mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-2 md:items-center">
+      <div className="mx-auto max-w-6xl 2xl:max-w-7xl px-6 grid gap-10 md:grid-cols-2 md:items-center">
         {imageSide === "left" ? (
           <>
             {image}

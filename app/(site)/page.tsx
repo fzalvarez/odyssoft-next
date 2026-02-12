@@ -9,12 +9,19 @@ import ServicesGrid from "@/components/sections/ServicesGrid";
 import ComparisonCTA from "@/components/sections/ComparisonCTA";
 /* import Newsletter from "@/components/sections/Newsletter"; */
 import { ThemeDebug } from "@/components/debug/ThemeDebug";
+import OrbitGraphic from "@/components/ui/OrbitGraphic";
 
 export default function Home() {
   return (
     <div className="odys-surface">
       {/* <ThemeDebug /> */}
       <EnterpriseHero />
+
+      {/* Orbita de logos clientes */}
+      {/* <div className="my-12 flex justify-center">
+        <OrbitGraphic />
+      </div> */}
+
       <WorkflowTimeline />
       <TrustedLogos />
 

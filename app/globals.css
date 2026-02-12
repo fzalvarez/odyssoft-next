@@ -49,6 +49,15 @@
   --sidebar-accent-foreground: 26 26 26;
   --sidebar-border: 229 229 229;
   --sidebar-ring: 163 163 163;
+
+  /* Contenedores (override para aumentar ancho global):
+     - Asignamos `xl` al valor equivalente a `6xl` (72rem)
+     - Asignamos `2xl` al valor equivalente a `7xl` (80rem)
+     Esto permite que las utilidades como `max-w-xl` y `max-w-2xl` usen estos anchos si están ligadas a estas variables. */
+  --container-md: 28rem;
+  --container-xl: 72rem;   /* xl -> 6xl */
+  --container-2xl: 80rem;  /* 2xl -> 7xl */
+  --container-6xl: 72rem;
 }
 
 .dark {

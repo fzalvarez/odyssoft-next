@@ -3,7 +3,7 @@ export default function TrustedBy() {
 
   return (
     <section className="py-14 border-y">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl 2xl:max-w-7xl px-6">
         <p className="text-sm font-medium text-muted-foreground">
           Trusted by teams shipping critical software
         </p>

@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <section className="py-32">
-      <div className="mx-auto max-w-6xl px-6 text-center">
+      <div className="mx-auto max-w-6xl 2xl:max-w-7xl px-6 text-center">
         <h1 className="text-5xl font-bold tracking-tight">
           From Concept to Completion
         </h1>
